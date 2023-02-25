@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="nav-title">
+          <h3>Matrimonial Web</h3>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li><a th:href="@{/index}">Home</a></li>
+            <li><a th:href="@{/about}">About Us</a></li>
+            <li><a th:href="@{/explore}">Search Your Match</a></li>
+            <li><a th:href="@{/contact}">Contact Us</a></li>
+            <li><a th:href="@{/userProfile}">Profile</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- 1234567.png -->
+      <div class="userProfile">
+        <img th:src="${'uploadImages/'+user.img}" alt="">
+        <p th:text="${user.username}"></p>
+        <p th:text="${user.email}"></p>
+        <p th:text="${user.age}"></p>
+        <p th:text="${user.gender}"></p>
+
+        <a th:href="@{/logOut}">Log Out</a>
+      </div>
+
+      <div class="footer">
+        <h1>Matrimonial Web</h1>
+        <p>&#169; Copyright. All Copyright is reserved.</p>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/javascript/scrollreveal.js"></script>
+  </body>
+</html>

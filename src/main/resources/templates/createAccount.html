@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <div class="login" style="background-image: url('/img/loginBack.jfif');">
+        <form th:action="@{/up}" method="POST" th:object="${user}" enctype="multipart/form-data"   class="loginForm reg">
+            <h3>Create a Account</h3>
+            <div class="login-input reg-input ">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" th:field="*{username}" name="name" placeholder="Name" id="name" />
+            </div>
+            <div class="login-input reg-input">
+                <i class="fa-solid fa-at"></i>
+                <input type="email" name="email" th:field="*{email}" placeholder="Email" id="email" />
+            </div>
+            <div class="login-input reg-input">
+                <i class="fa-solid fa-image"></i>
+                <input type="file" name="image"  placeholder="Select Profile Image" id="img" />
+            </div>
+            <div class="login-input reg-input">
+                <i class="fa-solid fa-venus"></i>
+                <input type="text" name="gender" th:field="*{gender}" placeholder="Gender" id="gender" />
+            </div>
+            <div class="login-input reg-input">
+                <i class="fa-solid fa-hashtag"></i>
+                <input type="number" name="age" th:field="*{age}" placeholder="Age" id="age" />
+            </div>
+            <div class="login-input reg-input">
+                <i class="fa-solid fa-venus-mars"></i>
+                <input type="text" name="lfr" th:field="*{lfr}" placeholder="Looking for ?" id="lfr" />
+            </div>
+            <div class="login-input reg-input">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" name="password" th:field="*{password}" placeholder="Password" id="password" />
+            </div>
+            <div class="btns">
+                <button type="submit">Create New Account</button>
+                <button >Log in</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/javascript/scrollreveal.js"></script>
+</body>
+</html>

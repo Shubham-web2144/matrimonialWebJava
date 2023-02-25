@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+    <link href="/css/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="nav-title">
+          <h3>Matrimonial Web</h3>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li><a th:href="@{/index}" >Home</a></li>
+            <li><a th:href="@{/about}">About Us</a></li>
+            <li><a th:href="@{/explore}">Search Your Match</a></li>
+            <li><a th:href="@{/contact}" >Contact Us</a></li>
+            <li><a th:href="@{/userProfile}">Profile</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!--   banner with text -->
+      <div
+        class="banner"
+        style="background-image: url('/img/banner2.jfif')"
+      >
+        <div class="banner-social-list">
+          <ul>
+            <li>
+              <a><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a><i class="fa-brands fa-google-plus-g"></i></a>
+            </li>
+            <li>
+              <a><i class="fa-brands fa-tiktok"></i></a>
+            </li>
+          </ul>
+        </div>
+        <h2 class="banner-title">Contact Us</h2>
+      </div>
+
+      <div class="contact-address">
+        <h1>Our Locations</h1>
+        <div class="contact-card">
+          <img src="/img/building.jfif" alt="" />
+          <h5>
+            5th floor, Super Complex, King Building , Pimple Saudagar,
+            Pimperi-Chinchwad, Pune- 431172
+          </h5>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h1>Do you have any quetions ?</h1>
+        <form th:action="@{/handleContact}" method="POST" th:object="${contact}" class="contact-form-form">
+          <div class="input-fields-input">
+            <input type="text" placeholder="Name" name="name" th:field="*{name}" id="name" />
+            <input type="email" placeholder="Email" name="email" th:field="*{email}" id="email" />
+            <input
+              type="text"
+              placeholder="Mobile No"
+              name="mobile"
+              th:field="*{mobile}"
+              id="mobile"
+            />
+          </div>
+          <div class="input-fields">
+            <input
+              type="text"
+              placeholder="Subject"
+              name="subject"
+              th:field="*{subject}"
+              id="subject"
+            />
+          </div>
+          <div class="input-fields">
+            <textarea name="msg" id="msg" cols="30" rows="10" th:field="*{message}" placeholder="Enter your message here..."></textarea>
+          </div>
+          <div class="btn">
+            <button
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="footer">
+        <h1>Matrimonial Web</h1>
+        <p>&#169; Copyright. All Copyright is reserved.</p>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/javascript/scrollreveal.js"></script>
+  </body>
+</html>
